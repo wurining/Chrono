@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Chrono">
+  <meta property="og:title" content="Chrono"/>
+  <meta property="og:description" content="Exploring Temporally-Aware Features for Point Tracking"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Exploring Temporally-Aware Features for Point Tracking</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Exploring Temporally-Aware Features for Point Tracking</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://ines-hyeonsu-kim.github.io/" target="_blank">Inès Hyeonsu Kim</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="https://seokju-cho.github.io/" target="_blank">Seokju Cho</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://gabriel-huang.github.io" target="_blank">Jiahui Huang</a><sup>2</sup>,</span>
+                    <span class="author-block">
+                      <a href="https://github.com/YJ-142150" target="_blank">Jung Yi</a><sup>1</sup>,</span>
+                      <br>
+                      <span class="author-block">
+                        <a href="http://joonyoung-cv.github.io" target="_blank">Joon-Young Lee</a><sup>2</sup>,</span>
+                        <span class="author-block">
+                          <a href="https://cvlab.kaist.ac.kr" target="_blank">Seungryong Kim</a><sup>1</sup>,</span>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>KAIST AI, <sup>2</sup>Adobe Research</span>
+                    <!--<span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3" style="text-align: center;">Initialized Point Tracks of Chrono</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1" style="text-align: center;">
+          <video poster="" id="video1" autoplay controls muted loop style="width: 80%; height: auto; margin: 0 auto;">
+            <!-- Your video file here -->
+            <source src="static/videos/Temp_base_teaser29.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2" style="text-align: center;">
+          <video poster="" id="video2" autoplay controls muted loop style="width: 80%; height: auto; margin: 0 auto;">
+            <!-- Your video file here -->
+            <source src="static/videos/Temp_base_teaser24.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3" style="text-align: center;">
+          <video poster="" id="video3" autoplay controls muted loop style="width: 80%; height: auto; margin: 0 auto;">\
+            <!-- Your video file here -->
+            <source src="static/videos/Temp_base_teaser15.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px">Abstract</h2>
+        <div class="content has-text-justified" style="font-size: 20px;">
+          <p>
+            In this work, we introduce <b>Chrono</b>, a feature backbone specifically designed for point tracking with built-in temporal awareness.
+            Leveraging pre-trained representations from self-supervised learner DINOv2 and enhanced with a temporal adapter, Chrono effectively captures long-term temporal context, enabling precise prediction even without the refinement stage.
+            Experimental results demonstrate that  <b>Chrono</b> achieves state-of the-art performance in a refiner-free setting on the TAP-Vid-DAVIS and TAP-Vid-Kinetics datasets, among common feature backbones used in point tracking as well as DINOv2, with exceptional efficiency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px">Main Architecture</h2>
+
+        <img src="static/images/New_architecture.png" class="center" width="60%">
+
+        <div class="content has-text-justified" style="margin-top: 15px; text-align: left; font-size: 20px;">
+          We propose a novel backbone model for point tracking. Temporal adapters between transformer blocks use convolutional layers and 1D local
+          attention along the temporal axis to output temporally-aware features. We omit residual connections for clarity.
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px">Point Estimation Process</h2>
+
+        <img src="static/images/Prediction_Process.png" class="center" width="70%">
+
+        <div class="content has-text-justified" style="margin-top: 15px; text-align: left; font-size: 20px;">
+          This represents the process for performing point estimation, rather than the backbone of the model.
+          To predict point positions, we simply match the query points with features from other frames, without using any learnable layers.
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-light" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered"><br>Quantitative Results</h2>
+        <img src="static/images/first.png" width="100%">
+        <div class="content has-text-justified" style="margin-top: 5px; text-align: left; font-size: 20px;">
+            <strong>Quantitative comparison on the TAP-Vid datasets with the query first mode.</strong> 
+        </div>
+        <img  src="static/images/Strided.png" width="100%" > 
+        <div class="content has-text-justified" style="margin-top: 5px; text-align: left; font-size: 20px;">
+            <strong>Quantitative comparison on the TAP-Vid datasets with the strided query mode.</strong> 
+      </div>
+      <div class="content has-text-justified" style="margin-top: 15px; text-align: left; font-size: 20px;">
+        Compared to other feature backbones widely used in point tracking, our model shows exceptional performance in position accuracy.
+        Both <b>Chrono</b> (ViT-S/14) and <b>Chrono</b> (ViT-B/14) reach the highest position accuracy among backbones, demonstrating Chrono ’s ability to effectively model spatial and temporal information in videos.
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Video carousel-->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3" style="text-align: center;">Qualitative Results</h2>
+      <div class="content has-text-justified" style="margin-top: 15px; text-align: left; font-size: 20px;">
+        <strong>Qualitative comparison of complex real-world video tracking.</strong> We qualitatively compare the results generated by Chrono
+        with those from other commonly used backbones in point tracking. Our model demonstrates better smoothness and precision than other competitors.
+      </div>
+      <div id="results-carousel" class="carousel results-carousel" data-autoplay="false">
+        <div class="item item-video1" style="text-align: center;">
+          <video poster="" id="video1-1" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">
+            <source src="static/videos/Resnet_teaser29.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center; margin-top: 5px; margin-bottom: 15px; font-size: 20px">ResNet</p>
+
+          <video poster="" id="video1-2" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">
+            <source src="static/videos/TSM_ResNet_teaser29.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px">TSM-ResNet</p>
+
+          <video poster="" id="video1-3" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">
+            <source src="static/videos/Temp_base_teaser29.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px"><b>Chrono (Ours)</b> </p>
+          
+        </div>
+        <div class="item item-video2" style="text-align: center;">
+          <video poster="" id="video2-1" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">
+            <source src="static/videos/Resnet_teaser14.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center; margin-top: 5px; margin-bottom: 15px; font-size: 20px">ResNet</p>
+
+          <video poster="" id="video2-2" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">
+            <source src="static/videos/TSM_ResNet_teaser14.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px">TSM-ResNet</p>
+
+          <video poster="" id="video2-3" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">
+            <source src="static/videos/Temp_base_teaser14.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px"><b>Chrono (Ours)</b> </p>
+        </div>
+        <div class="item item-video3" style="text-align: center;">
+          <video poster="" id="video3-1" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/Resnet_teaser23.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center; margin-top: 5px; margin-bottom: 15px; font-size: 20px">ResNet</p>
+
+          <video poster="" id="video3-2" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/TSM_ResNet_teaser23.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px">TSM-ResNet</p>
+
+          <video poster="" id="video3-3" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/Temp_base_teaser23.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px"><b>Chrono (Ours)</b> </p>
+
+        </div>
+        <div class="item item-video4" style="text-align: center;">
+          <video poster="" id="video4-1" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/Resnet_teaser3.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center; margin-top: 5px; margin-bottom: 15px; font-size: 20px">ResNet</p>
+
+          <video poster="" id="video4-2" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/TSM_ResNet_teaser3.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px">TSM-ResNet</p>
+
+          <video poster="" id="video4-3" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/Temp_base_teaser3.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px"><b>Chrono (Ours)</b> </p>
+
+        </div>
+      </div>
+      <!--<div class="content has-text-justified" style="margin-top: 15px; text-align: left; font-size: 20px;">
+        <strong>Qualitative comparison of complex real-world video tracking.</strong> We qualitatively compare the results generated by Chrono
+        with those from other commonly used backbones in point tracking. Our model demonstrates better smoothness and precision than other competitors.
+      </div>-->
+    </div>
+  </div>
+</section>
+<!--End video carousel -->
+
+
+<section class="section hero is-small" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!--<h2 class="title is-3 has-text-centered"><br>Qualitative Results</h2>
+        <div class="content has-text-justified" style="margin-top: 15px; text-align: left; font-size: 20px;">
+          <strong>Qualitative comparison of complex real-world video tracking.</strong> We qualitatively compare the results generated by Chrono
+          with those from other commonly used backbones in point tracking. Our model demonstrates better smoothness and precision than other competitors.
+        </div>-->
+        <table>
+          <tbody>
+            <tr style="padding:0px">
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <video onloadstart="this.playbackRate = 0.8;"controls="" style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true"
+                  muted="true">
+                  <source src="static/videos/Resnet_teaser29.mp4" type="video/mp4">Sorry, your browser doesn't support embedded
+                  videos.
+                </video>
+              </td>
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <video onloadstart="this.playbackRate = 0.8;"controls="" style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true"
+                  muted="true">
+                  <source src="static/videos/TSM_ResNet_teaser29.mp4" type="video/mp4">Sorry, your browser doesn't support
+                  embedded
+                  videos.
+                </video>
+              </td>
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <video onloadstart="this.playbackRate = 0.8;"controls="" style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true"
+                  muted="true">
+                  <source src="static/videos/Temp_base_teaser29.mp4" type="video/mp4">Sorry, your browser doesn't support
+                  embedded
+                  videos.
+                </video>
+              </td>
+            </tr>
+            <tr style="padding:0px">
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <video controls="" style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true"
+                  muted="true">
+                  <source src="static/videos/Resnet_teaser14.mp4" type="video/mp4">Sorry, your browser doesn't support embedded
+                  videos.
+                </video>
+              </td>
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <video controls="" style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true"
+                  muted="true">
+                  <source src="static/videos/TSM_ResNet_teaser14.mp4" type="video/mp4">Sorry, your browser doesn't support
+                  embedded
+                  videos.
+                </video>
+              </td>
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <video controls="" style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true"
+                  muted="true">
+                  <source src="static/videos/Temp_base_teaser14.mp4" type="video/mp4">Sorry, your browser doesn't support
+                  embedded
+                  videos.
+                </video>
+              </td>
+            </tr>
+            <tr style="padding:0px">
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <video onloadstart="this.playbackRate = 0.8;" controls="" style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true"
+                  muted="true">
+                  <source src="static/videos/Resnet_teaser23.mp4" type="video/mp4">Sorry, your browser doesn't support embedded
+                  videos.
+                </video>
+              </td>
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <video onloadstart="this.playbackRate = 0.8;"controls="" style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true"
+                  muted="true">
+                  <source src="static/videos/TSM_ResNet_teaser23.mp4" type="video/mp4">Sorry, your browser doesn't support
+                  embedded
+                  videos.
+                </video>
+              </td>
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <video onloadstart="this.playbackRate = 0.8;" controls="" style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true"
+                  muted="true">
+                  <source src="static/videos/Temp_base_teaser23.mp4" type="video/mp4">Sorry, your browser doesn't support
+                  embedded
+                  videos.
+                </video>
+              </td>
+            </tr>
+            <tr style="padding:0px">
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <video onloadstart="this.playbackRate = 0.8;" controls="" style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true"
+                  muted="true">
+                  <source src="static/videos/Resnet_teaser3.mp4" type="video/mp4">Sorry, your browser doesn't support embedded
+                  videos.
+                </video>
+              </td>
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <video onloadstart="this.playbackRate = 0.8;"controls="" style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true"
+                  muted="true">
+                  <source src="static/videos/TSM_ResNet_teaser3.mp4" type="video/mp4">Sorry, your browser doesn't support
+                  embedded
+                  videos.
+                </video>
+              </td>
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <video onloadstart="this.playbackRate = 0.8;" controls="" style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true"
+                  muted="true">
+                  <source src="static/videos/Temp_base_teaser3.mp4" type="video/mp4">Sorry, your browser doesn't support
+                  embedded
+                  videos.
+                </video>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+        <table
+          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tbody>
+            <tr style="padding:0px">
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <!--<div align="center">ResNet</div>-->
+                <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px">ResNet</p>
+              </td>
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <!--<div align="center">TSM-ResNet</div>-->
+                <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px">TSM-ResNet</p>
+              </td>
+              <td style="padding-right:1%;width:32%;vertical-align:middle">
+                <!--<div align="center"> <b>Chrono (Ours)</b></div>-->
+                <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px"><b>Chrono (Ours)</b> </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Video carousel-->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3" style="text-align: center;">PCA visualization comparison DINOv2 vs Chrono</h2>
+      <div class="content has-text-justified" style="margin-top: 15px; text-align: left; font-size: 20px;">
+        <strong>PCA Analysis on Temporal Smoothness of Chrono Features.</strong> For the extracted feature, we apply Principal Component Analysis (PCA) to the high-dimensional feature vectors to project them onto a lower-dimensional space. 
+        The features derived from Chrono exhibit significantly greater temporal smoothness across consecutive frames compared to those from DINOv2. 
+        This enhanced smoothness is evident from the more continuous trajectories and reduced abrupt changes in the PCA projections over time.
+      </div>
+      <div id="results-carousel" class="carousel results-carousel" data-autoplay="false">
+        <div class="item item-video1" style="text-align: center;">
+          <video poster="" id="video1-1" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">
+            <source src="static/videos/sheep_DINOv2.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center; margin-top: 5px; margin-bottom: 15px; font-size: 20px">DINOv2</p>
+
+          <video poster="" id="video1-3" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">
+            <source src="static/videos/sheep_Chrono.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px"><b>Chrono (Ours)</b> </p>
+          
+        </div>
+        <div class="item item-video2" style="text-align: center;">
+          <video poster="" id="video2-1" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">
+            <source src="static/videos/para_DINOv2.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center; margin-top: 5px; margin-bottom: 15px; font-size: 20px">DINOv2</p>
+
+          <video poster="" id="video2-3" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">
+            <source src="static/videos/para_Chrono.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px"><b>Chrono (Ours)</b> </p>
+        </div>
+        <div class="item item-video3" style="text-align: center;">
+          <video poster="" id="video3-1" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/camel_DINOv2.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center; margin-top: 5px; margin-bottom: 15px; font-size: 20px">DINOv2</p>
+
+          <video poster="" id="video3-3" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/camel_Chrono.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px"><b>Chrono (Ours)</b> </p>
+
+        </div>
+        <div class="item item-video4" style="text-align: center;">
+          <video poster="" id="video4-1" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/dancer_DINOv2.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center; margin-top: 5px; margin-bottom: 15px; font-size: 20px">DINOv2</p>
+
+          <video poster="" id="video4-3" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/dance_Chrono.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px"><b>Chrono (Ours)</b></p>
+
+        </div>
+        <div class="item item-video3" style="text-align: center;">
+          <video poster="" id="video3-1" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/car_DINOv2.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center; margin-top: 5px; margin-bottom: 15px; font-size: 20px">DINOv2</p>
+
+          <video poster="" id="video3-3" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/car_Chrono.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px"><b>Chrono (Ours)</b> </p>
+
+        </div>
+        <div class="item item-video3" style="text-align: center;">
+          <video poster="" id="video3-1" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/horse_DINOv2.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center; margin-top: 5px; margin-bottom: 15px; font-size: 20px">DINOv2</p>
+
+          <video poster="" id="video3-3" autoplay controls muted loop style="width: 60%; height: auto; margin: 0 auto;">\
+            <source src="static/videos/horse_Chrono.mp4"
+            type="video/mp4">
+          </video>
+          <p style="text-align: center;  margin-top: 5px; margin-bottom: 15px; font-size: 20px"><b>Chrono (Ours)</b> </p>
+
+        </div>
+      </div>
+      <!--<div class="content has-text-justified" style="margin-top: 15px; text-align: left; font-size: 20px;">
+        <strong>Qualitative comparison of complex real-world video tracking.</strong> We qualitatively compare the results generated by Chrono
+        with those from other commonly used backbones in point tracking. Our model demonstrates better smoothness and precision than other competitors.
+      </div>-->
+    </div>
+  </div>
+</section>
+<!--End video carousel -->
+
+
+
+<!--BibTex citation -->
+  <section class="section is-small" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template.</a>
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
