@@ -623,6 +623,17 @@
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
-
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone|Opera Mini|IEMobile/i.test(navigator.userAgent);
+        if (isMobile) {
+          const videos = document.querySelectorAll("video");
+          videos.forEach(video => {
+            video.removeAttribute("autoplay");
+            video.pause();
+          });
+        }
+      });
+    </script>
   </body>
   </html>
