@@ -218,6 +218,11 @@
         <h2 class="title is-3" style="margin-top: -20px">Abstract</h2>
         <div class="content has-text-justified" style="font-size: 20px;">
           <p>
+            Point tracking in videos is a fundamental task with applications in robotics, video editing, and more.
+            While many vision tasks benefit from pre-trained feature backbones to improve generalizability, point tracking has primarily relied on simpler backbones trained from scratch on synthetic data, which may limit robustness in real-world scenarios.
+            Additionally, point tracking requires temporal awareness to ensure coherence across frames, but using temporally-aware features is still underexplored.
+            Most current methods often employ a two-stage process: an initial coarse prediction followed by a refinement stage to inject temporal information and correct errors from the coarse stage.
+            These approach, however, is computationally expensive and potentially redundant if the feature backbone itself captures sufficient temporal information.<br>
             In this work, we introduce <b>Chrono</b>, a feature backbone specifically designed for point tracking with built-in temporal awareness.
             Leveraging pre-trained representations from self-supervised learner DINOv2 and enhanced with a temporal adapter, Chrono effectively captures long-term temporal context, enabling precise prediction even without the refinement stage.
             Experimental results demonstrate that Chrono achieves state-of the-art performance in a refiner-free setting on the TAP-Vid-DAVIS and TAP-Vid-Kinetics datasets, among common feature backbones used in point tracking as well as DINOv2, with exceptional efficiency.
@@ -239,8 +244,12 @@
         <img src="static/images/New_architecture.png" class="center" width="60%">
 
         <div class="content has-text-justified" style="margin-top: 15px; text-align: left; font-size: 20px;">
-          We propose a novel backbone model for point tracking. Temporal adapters between transformer blocks use convolutional layers and 1D local
-          attention along the temporal axis to output temporally-aware features. We omit residual connections for clarity.
+          Our approach tackles robust point tracking by combining strong spatial representations with explicit temporal modeling.
+          First, we leverage DINOv2, known for its powerful, self-supervised spatial features, to effectively handle real-world data.
+          However, since DINOv2 alone lacks motion awareness, we augment it with a lightweight temporal adapter that processes information from neighboring frames. 
+          Placed between each transformer block of DINOv2, the temporal adapter reduces the spatial resolution of the extracted features, performs local-window temporal attention to capture point movements, and then restores the features to their original dimensions.
+          Finally, a residual connection preserves essential details from the original feature map.
+          By enhancing DINOv2 with this adapter, our architecture learns the spatiotemporal cues necessary for accurate point tracking across challenging video sequences.
         </div>
 
       </div>
@@ -258,8 +267,12 @@
         <img src="static/images/Prediction_Process.png" class="center" width="70%">
 
         <div class="content has-text-justified" style="margin-top: 15px; text-align: left; font-size: 20px;">
-          This represents the process for performing point estimation, rather than the backbone of the model.
-          To predict point positions, we simply match the query points with features from other frames, without using any learnable layers.
+          We measure the quality of feature extracted from Chrono by tracking points purely through feature matching.
+          First, we take the feature vector of a query point from one frame and compare it against every spatial location in subsequent frames using cosine similarity.
+          This generates a correlation map indicating how closely each pixel matches the query.
+          Then, a soft-argmax operation pinpoints the most likely location by producing a weighted average of all positions, guided by their correlation scores.<br>
+          Because this approach relies solely on our feature backbone, without iterative or learnable modules, it highlights the backbone’s inherent ability to capture robust and discriminative representations.
+          By masking positions beyond a local area of highest correlation, we further refine the prediction to reduce noise and more accurately track the point’s movement over time.
         </div>
 
       </div>
