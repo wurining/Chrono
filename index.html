@@ -222,7 +222,7 @@
             While many vision tasks benefit from pre-trained feature backbones to improve generalizability, point tracking has primarily relied on simpler backbones trained from scratch on synthetic data, which may limit robustness in real-world scenarios.
             Additionally, point tracking requires temporal awareness to ensure coherence across frames, but using temporally-aware features is still underexplored.
             Most current methods often employ a two-stage process: an initial coarse prediction followed by a refinement stage to inject temporal information and correct errors from the coarse stage.
-            These approach, however, is computationally expensive and potentially redundant if the feature backbone itself captures sufficient temporal information.<br>
+            These approach, however, is computationally expensive and potentially redundant if the feature backbone itself captures sufficient temporal information.
             In this work, we introduce <b>Chrono</b>, a feature backbone specifically designed for point tracking with built-in temporal awareness.
             Leveraging pre-trained representations from self-supervised learner DINOv2 and enhanced with a temporal adapter, Chrono effectively captures long-term temporal context, enabling precise prediction even without the refinement stage.
             Experimental results demonstrate that Chrono achieves state-of the-art performance in a refiner-free setting on the TAP-Vid-DAVIS and TAP-Vid-Kinetics datasets, among common feature backbones used in point tracking as well as DINOv2, with exceptional efficiency.
@@ -270,7 +270,7 @@
           We measure the quality of feature extracted from Chrono by tracking points purely through feature matching.
           First, we take the feature vector of a query point from one frame and compare it against every spatial location in subsequent frames using cosine similarity.
           This generates a correlation map indicating how closely each pixel matches the query.
-          Then, a soft-argmax operation pinpoints the most likely location by producing a weighted average of all positions, guided by their correlation scores.<br>
+          Then, a soft-argmax operation pinpoints the most likely location by producing a weighted average of all positions, guided by their correlation scores.
           Because this approach relies solely on our feature backbone, without iterative or learnable modules, it highlights the backbone’s inherent ability to capture robust and discriminative representations.
           By masking positions beyond a local area of highest correlation, we further refine the prediction to reduce noise and more accurately track the point’s movement over time.
         </div>
