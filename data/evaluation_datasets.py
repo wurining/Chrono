@@ -505,7 +505,7 @@ def create_davis_dataset(
     )
     to_iterate = tfds.as_numpy(ds)
   else:
-    to_iterate = davis_points_dataset.keys()
+    to_iterate = range(len(davis_points_dataset))
 
   for tmp in to_iterate:
     if full_resolution:

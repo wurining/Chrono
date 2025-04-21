@@ -11,3 +11,7 @@ __pycache__/
 *.pycachefile
 *.pth
 *.log
+
+# IDE
+.idea/
+.vscode/
